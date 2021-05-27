@@ -20,5 +20,10 @@
    "scripts": {
       "start": "ts-node src/index.ts",
       "restart": "./restart.sh"
-   }
+   },
+   "husky": {
+      "hooks": {
+        "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+      }
+    }
 }
