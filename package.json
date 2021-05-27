@@ -7,6 +7,7 @@
     "@types/node": "^8.0.29",
     "typescript": "3.3.3333",
     "husky": "^6.0.0",
+    "prettier": "^2.2.0",
     "@commitlint/cli": "^12.1.1",
     "@commitlint/config-conventional": "^12.1.1"
   },
@@ -20,6 +21,9 @@
   "scripts": {
     "start": "ts-node src/index.ts",
     "restart": "./restart.sh",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint": "npm run lint:js && npm run lint:style && npm run lint:prettier",
+    "lint:prettier": "prettier --check 'src/**/*.{js,jsx,tsx,ts,scss,md,json}'",
+    "fix:prettier": "npm run lint:prettier -- --check=false --write"
   }
 }
