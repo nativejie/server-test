@@ -1,6 +1,7 @@
 module.exports = {
   extends: ['@commitlint/config-conventional'],
   rules: {
+    // 可提交的枚举值
     'type-enum': [
       2,
       'always',
