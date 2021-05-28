@@ -1,7 +1,7 @@
 {
   "name": "monitor-platform-server",
   "version": "0.0.1",
-  "description": "Awesome project developed with TypeORM.",
+  "description": "前端异常监控平台服务端",
   "devDependencies": {
     "ts-node": "3.3.0",
     "@types/node": "^8.0.29",
@@ -20,7 +20,7 @@
   },
   "scripts": {
     "start": "ts-node src/index.ts",
-    "restart": "./restart.sh",
+    "restart": "./restart.sh 3005",
     "prepare": "husky install",
     "lint": "npm run lint:js && npm run lint:style && npm run lint:prettier",
     "lint:prettier": "prettier --check 'src/**/*.{js,jsx,tsx,ts,scss,md,json}'",
