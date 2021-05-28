@@ -17,10 +17,9 @@ const mapRoute = <T extends BaseController>(controller: T, app: any): void => {
   const basePath = Reflect.getMetadata('PREFIX', prototype['constructor']);
 
   methods.forEach((methodName) => {
-    const fn = prototype[methodName];
-    const route = basePath + Reflect.getMetadata('PATH', fn);
-    const method = Reflect.getMetadata('METHOD', fn);
-    console.log(method, route);
+    const fn: T = prototype[methodName];
+    const route: string = basePath + Reflect.getMetadata('PATH', fn);
+    const method: RequestMethod = Reflect.getMetadata('METHOD', fn);
     app[(method as string).toLowerCase()](
       route,
       (req: Request, res: Response, next: Function) => {
